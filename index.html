@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#170b1b">
+<title>একটু ভালোবাসা ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+:root{--gold:#f4d35e;--pink:#ff7b9c;--wine:#68152f;--night:#100b19;--paper:#f9e7df}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#fff6f4;background:radial-gradient(ellipse at 50% 20%,#351126 0%,#1a1021 48%,#090811 100%);font-family:'Hind Siliguri',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.3;background-image:radial-gradient(#f4d35e 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(transparent,#000,transparent)}
+.wrap{width:min(92%,650px);margin:auto;padding:28px 0 32px;position:relative}
+header{text-align:center;margin:8px 0 24px}
+.eyebrow{color:var(--gold);letter-spacing:4px;text-transform:uppercase;font-size:.76rem}
+h1{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(2rem,8vw,3.1rem);margin:8px 0;color:#ffe7e8;text-shadow:0 0 22px #ff6b9b66}
+.subtitle{color:#cbaab9;margin:0;font-size:.95rem}
+.cover,.book{border:1px solid #b78a2d;border-radius:18px;background:linear-gradient(145deg,#741c3c,#3c1028 62%,#210d22);box-shadow:0 15px 45px #0008,inset 0 0 0 5px #f4d35e0c;position:relative;overflow:hidden}
+.cover{min-height:410px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px}
+.cover:before,.cover:after{content:"";position:absolute;width:42px;height:42px;border-color:var(--gold);border-style:solid}
+.cover:before{top:15px;left:15px;border-width:3px 0 0 3px;border-radius:9px 0 0}
+.cover:after{bottom:15px;right:15px;border-width:0 3px 3px 0;border-radius:0 0 9px}
+.sparkles{font-size:1.8rem;color:var(--gold);letter-spacing:13px;margin-left:13px;text-shadow:0 0 16px #ffdc53}
+.cover h2{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:2.2rem;line-height:1.25;margin:16px 0}
+.heart{font-size:3.6rem;filter:drop-shadow(0 0 15px #ff527b66);animation:beat 1.5s infinite}
+@keyframes beat{50%{transform:scale(1.12)}}
+.cover p{color:#e6bdcf;font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem}
+.count{letter-spacing:4px;color:#cbaab9;font-size:.85rem}
+button{font:inherit;cursor:pointer;color:#fff;border:1px solid #bd8d37;background:linear-gradient(100deg,#a32b4e,#6e1640);border-radius:999px;padding:13px 23px;box-shadow:0 6px 24px #d7335c30;transition:transform .2s,filter .2s}
+button:hover{transform:translateY(-2px);filter:brightness(1.15)}
+.primary{display:block;margin:22px auto 18px;font-size:1.15rem;padding:13px 32px}
+.book{display:none;padding:24px 20px 20px;min-height:470px}
+.book.open{display:block;animation:rise .45s ease}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.booktop{display:flex;justify-content:space-between;align-items:center;color:#e8c4d0;font-size:.85rem;letter-spacing:1px;margin-bottom:18px}
+.progress{height:5px;background:#ffffff18;border-radius:99px;overflow:hidden;margin-bottom:24px}
+.progress span{display:block;height:100%;width:20%;background:linear-gradient(90deg,var(--pink),var(--gold));transition:width .3s}
+.page{min-height:310px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 6px}
+.page-num{color:var(--gold);letter-spacing:4px;font-size:.8rem}
+.page h3{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.8rem,6vw,2.5rem);font-weight:500;color:#ffe1e6;margin:18px 0}
+.page p{font-size:1.15rem;line-height:1.9;color:#f0d9e2;max-width:440px;margin:0 auto}
+.page .little{font-size:2rem;margin-top:22px}
+.nav{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.nav button{min-width:130px;background:#170e20}
+.nav button:disabled{opacity:.3;cursor:not-allowed;transform:none}
+.close{display:block;margin:18px auto 0;background:transparent;box-shadow:none}
+.final-flower{display:none;text-align:center;padding:12px 0 6px}
+.final-flower.show{display:block;animation:rise .6s ease}
+.final-flower h3{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:2rem;font-weight:500}
+.final-flower p{line-height:1.9;color:#f0d9e2;font-size:1.08rem}
+.flower{width:190px;height:210px;margin:4px auto 8px;position:relative;animation:sway 3s ease-in-out infinite alternate;transform-origin:bottom}
+@keyframes sway{to{transform:rotate(4deg)}}
+.stem{position:absolute;width:7px;height:112px;background:linear-gradient(90deg,#28633f,#66a65b);left:91px;top:82px;border-radius:9px;transform:rotate(4deg)}
+.leaf{position:absolute;width:48px;height:24px;background:linear-gradient(135deg,#6db86b,#276340);border-radius:100% 0 100% 0;top:139px;left:91px;transform:rotate(-20deg)}
+.leaf.two{top:157px;left:51px;transform:rotate(205deg)}
+.petal{position:absolute;width:45px;height:65px;left:72px;top:16px;background:linear-gradient(150deg,#ffb0c8,#e72f71 75%);border-radius:55% 55% 45% 45%;transform-origin:bottom center;box-shadow:inset 2px 2px 8px #fff5}
+.p1{transform:rotate(0deg) translateY(-8px)}.p2{transform:rotate(45deg) translateY(-8px)}.p3{transform:rotate(90deg) translateY(-8px)}.p4{transform:rotate(135deg) translateY(-8px)}.p5{transform:rotate(180deg) translateY(-8px)}.p6{transform:rotate(225deg) translateY(-8px)}.p7{transform:rotate(270deg) translateY(-8px)}.p8{transform:rotate(315deg) translateY(-8px)}
+.center{position:absolute;width:37px;height:37px;left:76px;top:38px;border-radius:50%;background:radial-gradient(circle,#ffe88c 0 12%,#f3a52e 45%,#c96a24 75%);box-shadow:0 0 18px #ffd75b99}
+footer{text-align:center;color:#a88b9d;font-size:.85rem;margin-top:25px}
+footer span{color:#ff7b9c}
+@media(min-width:600px){.wrap{padding-top:36px}.cover{min-height:440px}.book{padding:28px 32px}.page{min-height:320px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header>
+  <div class="eyebrow">একটি ছোট্ট উপহার</div>
+  <h1>For Someone Special</h1>
+  <p class="subtitle">কিছু কথা, যেগুলো মন থেকে বলা… ♡</p>
+</header>
+
+<section class="cover" id="cover">
+  <div class="sparkles">✦ ✧ ✦</div>
+  <h2>Little Things<br>That Matter</h2>
+  <div class="heart">💗</div>
+  <p>একটু অনুভূতি, পাঁচটি পৃষ্ঠা</p>
+  <div class="count">৫টি সুন্দর কথা</div>
+</section>
+<button class="primary" id="openBtn">📖 বইটি খুলে দেখো</button>
+
+<section class="book" id="book" aria-live="polite">
+  <div class="booktop"><span>♡ A LITTLE BOOK OF FEELINGS</span><span id="counter">১ / ৫</span></div>
+  <div class="progress"><span id="bar"></span></div>
+  <article class="page" id="page">
+    <div class="page-num">পৃষ্ঠা ০১</div>
+    <h3>তোমার হাসি</h3>
+    <p>কিছু হাসি আছে, যা মুহূর্তেই মন ভালো করে দেয়। তোমার হাসিটাও ঠিক তেমন—একটু আলো, একটু শান্তি, আর অনেকটা ভালো লাগা।</p>
+    <div class="little">✨</div>
+  </article>
+  <div class="nav">
+    <button id="prevBtn" disabled>← আগের পৃষ্ঠা</button>
+    <button id="nextBtn">পরের পৃষ্ঠা →</button>
+  </div>
+  <button class="close" id="closeBtn">📕 বই বন্ধ করো</button>
+</section>
+
+<section class="final-flower" id="finalFlower">
+  <div class="flower" aria-label="একটি গোলাপি ফুল">
+    <div class="stem"></div><div class="leaf"></div><div class="leaf two"></div>
+    <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div><div class="petal p4"></div>
+    <div class="petal p5"></div><div class="petal p6"></div><div class="petal p7"></div><div class="petal p8"></div><div class="center"></div>
+  </div>
+  <h3>এই ফুলটা তোমার জন্য 🌷</h3>
+  <p>ফুলটা হয়তো একদিন শুকিয়ে যাবে,<br>কিন্তু এই ছোট্ট উপহারের সুন্দর মুহূর্তটা<br>তোমার মনে থেকে যাক। 💖</p>
+  <button id="againBtn">🌹 আবার শুরু থেকে পড়ো</button>
+</section>
+<footer>ছোট্ট উপহার, অনেকটা <span>♡</span> দিয়ে বানানো</footer>
+</main>
+<script>
+const pages = [
+  {title:"তোমার হাসি", text:"কিছু হাসি আছে, যা মুহূর্তেই মন ভালো করে দেয়। তোমার হাসিটাও ঠিক তেমন—একটু আলো, একটু শান্তি, আর অনেকটা ভালো লাগা।", emoji:"✨"},
+  {title:"তোমার সরলতা", text:"মানুষকে সুন্দর করে শুধু তার চেহারা নয়; তার ব্যবহার, মন আর ছোট ছোট যত্নও। তোমার সেই সুন্দর দিকগুলোই সবচেয়ে বেশি মনে থাকে।", emoji:"🦋"},
+  {title:"ছোট ছোট মুহূর্ত", text:"সব সুন্দর স্মৃতির জন্য বড় আয়োজন লাগে না। কখনো একটা কথা, একটুখানি খোঁজ নেওয়া, কিংবা একসঙ্গে হাসার মুহূর্তই দিনটাকে বিশেষ করে তোলে।", emoji:"🌙"},
+  {title:"তোমার জন্য শুভকামনা", text:"তোমার প্রতিটি নতুন সকাল নিয়ে আসুক আশা, প্রতিটি চেষ্টা এগিয়ে নিক তোমাকে স্বপ্নের কাছে। মন খারাপের দিনেও যেন তুমি নিজের ভেতরের আলোটা খুঁজে পাও।", emoji:"🌟"},
+  {title:"একটি ছোট্ট কথা", text:"এই পৃষ্ঠাগুলো শুধু মনে করিয়ে দেওয়ার জন্য—তুমি গুরুত্বপূর্ণ, তোমার অনুভূতির মূল্য আছে, আর পৃথিবীতে তোমার নিজের মতো করে সুন্দর হয়ে ওঠার অনেক জায়গা আছে।", emoji:"💗"}
+];
+const bn = n => ["০","১","২","৩","৪","৫","৬","৭","৮","৯"][n] || n;
+let current = 0;
+const cover = document.getElementById("cover"), openBtn = document.getElementById("openBtn");
+const book = document.getElementById("book"), finalFlower = document.getElementById("finalFlower");
+const page = document.getElementById("page"), counter = document.getElementById("counter");
+const bar = document.getElementById("bar"), prevBtn = document.getElementById("prevBtn"), nextBtn = document.getElementById("nextBtn");
+function renderPage(){
+  const p = pages[current];
+  page.innerHTML = `<div class="page-num">পৃষ্ঠা ${bn(current+1)}</div><h3>${p.title}</h3><p>${p.text}</p><div class="little">${p.emoji}</div>`;
+  counter.textContent = `${bn(current+1)} / ${bn(pages.length)}`;
+  bar.style.width = `${((current+1)/pages.length)*100}%`;
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === pages.length-1 ? "শেষ উপহার →" : "পরের পৃষ্ঠা →";
+}
+function openBook(){cover.style.display="none";openBtn.style.display="none";finalFlower.classList.remove("show");book.classList.add("open");current=0;renderPage();book.scrollIntoView({behavior:"smooth",block:"start"});}
+openBtn.addEventListener("click",openBook);
+prevBtn.addEventListener("click",()=>{if(current>0){current--;renderPage();}});
+nextBtn.addEventListener("click",()=>{if(current<pages.length-1){current++;renderPage();}else{book.classList.remove("open");finalFlower.classList.add("show");finalFlower.scrollIntoView({behavior:"smooth",block:"center"});}});
+document.getElementById("closeBtn").addEventListener("click",()=>{book.classList.remove("open");cover.style.display="flex";openBtn.style.display="block";finalFlower.classList.remove("show");cover.scrollIntoView({behavior:"smooth",block:"center"});});
+document.getElementById("againBtn").addEventListener("click",openBook);
+document.addEventListener("keydown",e=>{if(!book.classList.contains("open"))return;if(e.key==="ArrowRight"||e.key===" "){e.preventDefault();nextBtn.click();}if(e.key==="ArrowLeft")prevBtn.click();if(e.key==="Escape")document.getElementById("closeBtn").click();});
+</script>
+</body>
+</html>
